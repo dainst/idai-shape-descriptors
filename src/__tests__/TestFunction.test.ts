@@ -1,4 +1,4 @@
 import { TestFunction } from '../index';
-test('My Greeter', () => {
+test('TestFunction', () => {
   expect(TestFunction('Carl')).toBe('Hello Carl');
 });
