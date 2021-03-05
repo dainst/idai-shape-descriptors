@@ -25,6 +25,7 @@
   "homepage": "https://github.com/dainst/idai-shape-descriptors#readme",
   "devDependencies": {
     "@types/jest": "^26.0.20",
+    "@types/ndarray": "^1.0.8",
     "@typescript-eslint/eslint-plugin": "^4.16.1",
     "@typescript-eslint/parser": "^4.16.1",
     "eslint": "^7.21.0",
@@ -86,5 +87,13 @@
         "warn"
       ]
     }
+  },
+  "dependencies": {
+    "@tensorflow/tfjs": "^3.2.0",
+    "@types/ndarray-ops": "^1.2.0",
+    "@types/ndarray-scratch": "^1.2.0",
+    "ndarray": "^1.0.19",
+    "ndarray-ops": "^1.2.2",
+    "ndarray-scratch": "^1.2.0"
   }
 }
