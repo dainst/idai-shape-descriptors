@@ -6,4 +6,5 @@
     "github-actions.workflows.pinned.workflows": [".github/workflows/steps.yml"],
     "github-actions.workflows.pinned.refresh.enabled": true,
     "github-actions.workflows.pinned.refresh.interval": 65,
+    "terminal.integrated.inheritEnv": true
 }
