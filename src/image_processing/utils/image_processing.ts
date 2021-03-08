@@ -6,12 +6,10 @@ export const isImageBlack = (image: ndarray<number>): boolean => {
     let ret_val = true;
 
     for (let r = 0; r < rows; r++)
-    {
         for(let c = 0; c < cols; c++)
             if(image.get(r,c) !== 0){
                 ret_val = false;
                 break;
             }
-    }
     return ret_val;
 };
