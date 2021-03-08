@@ -1,3 +1,8 @@
+// utils.ts
+/**
+ *
+ * Includes image processing util functions
+ */
 import ndarray = require('ndarray');
 
 /**
