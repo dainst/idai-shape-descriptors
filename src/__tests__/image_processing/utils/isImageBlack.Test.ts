@@ -1,4 +1,4 @@
-import { isImageBlack } from '../../../image_processing/utils/image_processing';
+import { isImageBlack } from '../../../image_processing/utils/utils';
 import ndarray = require('ndarray');
 import pool = require('ndarray-scratch');
 
