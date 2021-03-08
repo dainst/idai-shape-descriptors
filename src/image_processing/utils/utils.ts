@@ -1,5 +1,10 @@
 import ndarray = require('ndarray');
 
+/**
+ * Returns true if image is black
+ * @param {ndarray<number>} image - Input image
+ * @returns {boolean} is image black (true) or not
+ */
 export const isImageBlack = (image: ndarray<number>): boolean => {
 
     const [rows, cols] = image.shape;
