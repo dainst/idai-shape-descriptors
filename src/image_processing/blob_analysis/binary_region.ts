@@ -1,4 +1,5 @@
 import { Contour } from './contour';
+import { Point } from './point';
 
 export class BinaryRegion {
 
@@ -12,11 +13,11 @@ export class BinaryRegion {
 
     }
 
-    addInnerContourPixel = (pixel: [number, number]): void => {
+    addInnerContourPixel = (pixel: Point): void => {
         this.innerContours[this.innerContours.length -1].addPoint(pixel);
     };
 
-    addOuterContourPixel = (pixel: [number, number]): void => {
+    addOuterContourPixel = (pixel: Point): void => {
         this.outerContour.addPoint(pixel);
     };
 

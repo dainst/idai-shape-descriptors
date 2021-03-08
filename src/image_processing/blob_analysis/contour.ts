@@ -1,7 +1,8 @@
+import { Point } from './point';
 export class Contour {
-    points: [number, number][] = [];
+    points: Point[] = [];
 
-    addPoint = (point: [number, number]): void => {
+    addPoint = (point: Point): void => {
         this.points.push(point);
     };
 }
