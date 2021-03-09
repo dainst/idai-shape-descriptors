@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>image_processing/utils/utils | idai-shape-descriptors</title>
+	<title>Point | idai-shape-descriptors</title>
 	<meta name="description" content="Documentation for idai-shape-descriptors">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -53,62 +53,62 @@
 					<a href="../modules.html">idai-shape-descriptors</a>
 				</li>
 				<li>
-					<a href="image_processing_utils_utils.html">image_processing/utils/utils</a>
+					<a href="../modules/image_processing_blob_analysis_point.html">image_processing/blob_analysis/point</a>
+				</li>
+				<li>
+					<a href="image_processing_blob_analysis_point.point.html">Point</a>
 				</li>
 			</ul>
-			<h1>Module image_processing/utils/utils</h1>
+			<h1>Interface Point</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">Point</span>
+					</li>
+				</ul>
+			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Functions</h3>
+							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="image_processing_utils_utils.html#isimageblack" class="tsd-kind-icon">is<wbr>Image<wbr>Black</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="image_processing_blob_analysis_point.point.html#x" class="tsd-kind-icon">x</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="image_processing_blob_analysis_point.point.html#y" class="tsd-kind-icon">y</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Functions</h2>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="isimageblack" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> is<wbr>Image<wbr>Black</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">is<wbr>Image<wbr>Black<span class="tsd-signature-symbol">(</span>image<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ndarray</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/dainst/idai-shape-descriptors/blob/c9de4d4/src/image_processing/utils/utils.ts#L13">image_processing/utils/utils.ts:13</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Returns true if image is black</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>image: <span class="tsd-signature-type">ndarray</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>Input image</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-							<p>is image black (true) or not</p>
-						</li>
-					</ul>
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="x" class="tsd-anchor"></a>
+					<h3>x</h3>
+					<div class="tsd-signature tsd-kind-icon">x<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/dainst/idai-shape-descriptors/blob/c9de4d4/src/image_processing/blob_analysis/point.ts#L2">image_processing/blob_analysis/point.ts:2</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="y" class="tsd-anchor"></a>
+					<h3>y</h3>
+					<div class="tsd-signature tsd-kind-icon">y<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/dainst/idai-shape-descriptors/blob/c9de4d4/src/image_processing/blob_analysis/point.ts#L3">image_processing/blob_analysis/point.ts:3</a></li>
+						</ul>
+					</aside>
 				</section>
 			</section>
 		</div>
@@ -119,26 +119,41 @@
 						<a href="../modules.html">Exports</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="image_processing_blob_analysis_binary_region.html">image_<wbr>processing/blob_<wbr>analysis/binary_<wbr>region</a>
+						<a href="../modules/image_processing_blob_analysis_binary_region.html">image_<wbr>processing/blob_<wbr>analysis/binary_<wbr>region</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="image_processing_blob_analysis_constants.html">image_<wbr>processing/blob_<wbr>analysis/constants</a>
+						<a href="../modules/image_processing_blob_analysis_constants.html">image_<wbr>processing/blob_<wbr>analysis/constants</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="image_processing_blob_analysis_contour.html">image_<wbr>processing/blob_<wbr>analysis/contour</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="image_processing_blob_analysis_point.html">image_<wbr>processing/blob_<wbr>analysis/point</a>
+						<a href="../modules/image_processing_blob_analysis_contour.html">image_<wbr>processing/blob_<wbr>analysis/contour</a>
 					</li>
 					<li class="current tsd-kind-module">
-						<a href="image_processing_utils_utils.html">image_<wbr>processing/utils/utils</a>
+						<a href="../modules/image_processing_blob_analysis_point.html">image_<wbr>processing/blob_<wbr>analysis/point</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/image_processing_utils_utils.html">image_<wbr>processing/utils/utils</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface tsd-parent-kind-module">
+						<a href="image_processing_blob_analysis_point.point.html" class="tsd-kind-icon">Point</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="image_processing_blob_analysis_point.point.html#x" class="tsd-kind-icon">x</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="image_processing_blob_analysis_point.point.html#y" class="tsd-kind-icon">y</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="image_processing_utils_utils.html#isimageblack" class="tsd-kind-icon">is<wbr>Image<wbr>Black</a>
+						<a href="../modules/image_processing_blob_analysis_point.html#addpoints" class="tsd-kind-icon">add<wbr>Points</a>
 					</li>
 				</ul>
 			</nav>
@@ -155,6 +170,7 @@
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
