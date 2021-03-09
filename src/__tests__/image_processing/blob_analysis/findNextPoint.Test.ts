@@ -37,4 +37,19 @@ describe('Test function findNextPoint', ()=> {
         expect(direction).toEqual(3);
         expect(labelMap).toEqual(expected_labelMap);
     });
+
+    it('Should find neighbour pixel to the right', () => {
+        const binaryImage = pack([ [1,0,0],
+                                    [0,1,1],
+                                    [1,0,0]]);
+        const searchDir = 6;
+        const expected_point = { x:2, y: 1 };
+        const startPoint: Point = { x: 1, y: 1 };
+        const labelMap = pack([ [1,0,0],
+            [0,1,1],
+            [1,0,0]]);
+        const [foundPoint, direction] = findNextPoint(startPoint, searchDir, binaryImage, labelMap);
+        expect(direction).toEqual(0);
+        expect(foundPoint).toEqual(expected_point);
+    });
 });
