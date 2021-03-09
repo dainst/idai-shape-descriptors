@@ -6,7 +6,45 @@
  */
 import ndarray = require('ndarray');
 import { BACKGROUND } from './constants';
-import { addPoints, Point } from './point';
+import { Contour } from './contour';
+import { addPoints, isEqualPoints, Point } from './point';
+
+/**
+ * Traces inner or outer contour
+ * @param {Point} startPoint - starting point
+ * @param {0 | 1} searchDirection - search direction 0: outer contour 1: inner contour
+ * @param {number} label - region label
+ * @param {ndarray<number>} binaryImage - binaryImage
+ * @param {ndarray<number>} labelMap - labelMap
+ * @returns The contour starting at startPoint
+ */
+export const traceContour = (startPoint: Point, searchDirection: 0 | 1, label: number,
+        binaryImage: ndarray<number>, labelMap: ndarray<number>): Contour => {
+    
+    const contour = new Contour();
+    const [successorPoint, dNext] = findNextPoint(startPoint, searchDirection, binaryImage, labelMap);
+    contour.addPoint(successorPoint);
+
+    let previousPoint = startPoint;
+    let currentPoint = successorPoint;
+    let done = isEqualPoints(startPoint, successorPoint);
+    let d_n = dNext;
+
+    while(!done){
+        labelMap.set(currentPoint.y, currentPoint.x, label);
+        const dSearch = (d_n + 6) % 8;
+        const [newPoint, newDirection] = findNextPoint(currentPoint, dSearch, binaryImage, labelMap);
+
+        d_n = newDirection;
+        previousPoint = currentPoint ;
+        currentPoint = newPoint ;
+
+        done = isEqualPoints(previousPoint, startPoint) && isEqualPoints(currentPoint, successorPoint);
+        if(!done) contour.addPoint(newPoint);
+    }
+    return contour;
+};
+
 
 /**
  * Find next contour point
