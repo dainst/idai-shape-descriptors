@@ -12,7 +12,7 @@ beforeAll(() => {
     contour = new Contour();
     
     for(let i=0; i < contour_length; i++)
-        contour.addPoint({ row: i,col: i });
+        contour.addPoint({ x: i,y: i });
 });
 
 test('Should be initiated with label.', () => {
@@ -38,8 +38,8 @@ test('Should be able to add inner contour', () => {
 
 test('Should append one pixel to outer Contour when using addOuterContourPixel', () => {
     const expected_cnt = [...contour.points];
-    expected_cnt.push({ row: 8,col: 8 });
-    region.addOuterContourPixel({ row: 8,col: 8 });
+    expected_cnt.push({ x: 8,y: 8 });
+    region.addOuterContourPixel({ x: 8,y: 8 });
     expect(region.getOuterContour().points).toEqual(expected_cnt);
 });
 
@@ -47,13 +47,13 @@ test('Should append one pixel to latest pushed Innercontour when calling addInne
     const second_contour = new Contour();
     for(let i=0; i < 10; i++){
         const randInt = Math.floor( Math.random()*10);
-        second_contour.addPoint({ row: randInt, col: randInt });
+        second_contour.addPoint({ x: randInt, y: randInt });
     }
     const expected_cnt = [...second_contour.points];
-    expected_cnt.push({ row: 8,col: 8 });
+    expected_cnt.push({ x: 8,y: 8 });
 
     region.addInnerContour(second_contour);
-    region.addInnerContourPixel({ row: 8,col: 8 });
+    region.addInnerContourPixel({ x: 8,y: 8 });
 
     expect(region.getInnerContours().length).toBe(2);
     expect(region.getInnerContours()[1].points).toEqual(expected_cnt);

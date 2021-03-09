@@ -1,9 +1,9 @@
 export interface Point {
-    row: number;
-    col: number;
+    x: number;
+    y: number;
 }
 
 export const addPoints = (p1: Point, p2: Point): Point => {
 
-    return { row: p1.row + p2.row, col: p1.col + p2.col };
+    return { x: p1.x + p2.x, y: p1.y + p2.y };
 };
