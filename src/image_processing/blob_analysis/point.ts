@@ -9,4 +9,4 @@ export const addPoints = (p1: Point, p2: Point): Point => {
 };
 
 export const isEqualPoints = (p1: Point, p2: Point): boolean =>
-    Object.entries(p1).toString() === Object.entries(p2).toString();
+    p1.x === p2.x && p1.y === p2.y;
