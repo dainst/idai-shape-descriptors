@@ -4,5 +4,5 @@
 ## Create Docs
 Docs are generated with [typedoc](https://typedoc.org/). You can update the docs with the following command.
 ```
-./node_modules/typedoc/bin/typedoc --out docs ./src
+./node_modules/typedoc/bin/typedoc --options typedoc.json
 ```
