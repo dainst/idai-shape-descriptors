@@ -1,5 +1,6 @@
 import { BinaryRegion } from '../../../image_processing/blob_analysis/binary_region';
 import { Contour } from '../../../image_processing/blob_analysis/contour';
+import { Point } from '../../../image_processing/blob_analysis/point';
 
 
 const label = 3;
@@ -24,16 +25,16 @@ test('Should have empty innerContours array when created', () => {
 });
 
 test('Should be able to set outer contour', () => {
-    
-
     region.setOuterContour(contour);
     expect(region.getOuterContour()).toEqual(contour);
+    expect(region.getRegionPixels()).toEqual(contour.points);
 });
 
 test('Should be able to add inner contour', () => {
     region.addInnerContour(contour);
     expect(region.getInnerContours().length).toBe(1);
     expect(region.getInnerContours()[0]).toEqual(contour);
+    expect(region.getRegionPixels().length).toBe(2*contour.points.length);
 });
 
 test('Should append one pixel to outer Contour when using addOuterContourPixel', () => {
@@ -57,5 +58,11 @@ test('Should append one pixel to latest pushed Innercontour when calling addInne
 
     expect(region.getInnerContours().length).toBe(2);
     expect(region.getInnerContours()[1].points).toEqual(expected_cnt);
+});
 
+test('Should add pixel to region when calling addRegionPixel', () => {
+    const point: Point = { x: 20, y: 30 };
+    region.addRegionPixel(point);
+    const [ last_element ] = region.getRegionPixels().slice(-1);
+    expect(last_element).toEqual(point);
 });
