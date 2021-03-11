@@ -62,7 +62,7 @@ const findNextPoint = (startPoint: Point, direction: number,
         const neighbour = addPoints(startPoint,getNextNeighbourPixel(d));
         if(binaryImage.get(neighbour.y, neighbour.x) === BACKGROUND){
             labelMap.set(neighbour.y,neighbour.x, -1);
-            d = (d+1) % 8;
+            d = (d + 1) % 8;
         }
         else return [neighbour, d];
     }

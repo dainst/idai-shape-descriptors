@@ -12,7 +12,7 @@ test('Should have empty points array when initiated', () => {
 
 test('Should store added contour points', () => {
     const control_array = [];
-    for(let i=0; i < 5; i++){
+    for(let i = 0; i < 5; i++){
         control_array.push({ x: i, y: i });
         contour.addPoint({ x: i, y: i });
     }

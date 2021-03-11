@@ -12,7 +12,7 @@ beforeAll(() => {
     region = new BinaryRegion(label);
     contour = new Contour();
     
-    for(let i=0; i < contour_length; i++)
+    for(let i = 0; i < contour_length; i++)
         contour.addPoint({ x: i,y: i });
 });
 
@@ -34,7 +34,7 @@ test('Should be able to add inner contour', () => {
     region.addInnerContour(contour);
     expect(region.getInnerContours().length).toBe(1);
     expect(region.getInnerContours()[0]).toEqual(contour);
-    expect(region.getRegionPixels().length).toBe(2*contour.points.length);
+    expect(region.getRegionPixels().length).toBe(2 * contour.points.length);
 });
 
 test('Should append one pixel to outer Contour when using addOuterContourPixel', () => {
@@ -46,8 +46,8 @@ test('Should append one pixel to outer Contour when using addOuterContourPixel',
 
 test('Should append one pixel to latest pushed Innercontour when calling addInnerContourPixel',() => {
     const second_contour = new Contour();
-    for(let i=0; i < 10; i++){
-        const randInt = Math.floor( Math.random()*10);
+    for(let i = 0; i < 10; i++){
+        const randInt = Math.floor( Math.random() * 10);
         second_contour.addPoint({ x: randInt, y: randInt });
     }
     const expected_cnt = [...second_contour.points];

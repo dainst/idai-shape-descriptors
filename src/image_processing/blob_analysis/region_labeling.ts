@@ -26,25 +26,25 @@ export const regionLabeling = (image: ndarray<number>): [BinaryRegion[], ndarray
     let currentLabel = 1;
     const regions: BinaryRegion[] = [];
 
-    for(let r=0; r < rows; ++r){
-        for(let c=0; c < cols; ++c){
+    for(let r = 0; r < rows; ++r){
+        for(let c = 0; c < cols; ++c){
             const point: Point = { x: c, y: r };
             if(isOuterContour(labelMap, zeroEmbeddedImage, point)){
                 const cnt = traceContour(point, 0, currentLabel, zeroEmbeddedImage, labelMap);
                 regions.push(new BinaryRegion(currentLabel));
-                regions[currentLabel-1].setOuterContour(cnt);
+                regions[currentLabel - 1].setOuterContour(cnt);
                 currentLabel += 1;
             } else if(isInnerContour(labelMap, zeroEmbeddedImage, point)){
                 const reglabel = labelMap.get(point.y, point.x - 1);
 
-                const cnt = traceContour({ x: point.x -1, y: point.y }, 1,
+                const cnt = traceContour({ x: point.x - 1, y: point.y }, 1,
                     reglabel , zeroEmbeddedImage, labelMap);
-                regions[reglabel-1].addInnerContour(cnt);
+                regions[reglabel - 1].addInnerContour(cnt);
             } else if(isRegionPixel(labelMap, zeroEmbeddedImage, point)){
                 const reglabel = labelMap.get(point.y, point.x - 1);
                 labelMap.set(point.y, point.x, reglabel);
 
-                regions[reglabel-1].addRegionPixel(point);
+                regions[reglabel - 1].addRegionPixel(point);
             }
             
           
@@ -63,7 +63,7 @@ export const regionLabeling = (image: ndarray<number>): [BinaryRegion[], ndarray
  */
 const createLabelMap = (image: ndarray<number>): [ndarray<number>, ndarray<number>] => {
     const [rows, cols] = image.shape;
-    const zeroEmbeddedImage = pool.zeros([rows+2, cols+2],'uint8');
+    const zeroEmbeddedImage = pool.zeros([rows + 2, cols + 2],'uint8');
     for(let r = 1; r < zeroEmbeddedImage.shape[0]; r++)
         for(let c = 1; c < zeroEmbeddedImage.shape[1]; c++)
             zeroEmbeddedImage.set(r,c, image.get(r - 1, c - 1));

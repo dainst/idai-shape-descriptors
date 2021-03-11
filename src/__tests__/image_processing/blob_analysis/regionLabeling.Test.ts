@@ -37,7 +37,7 @@ describe('Test regionLabeling', () => {
     });
 
     it('Should have found point (x:18 y: 8) as start point for outer contour of third region', () => {
-        const expected_point: Point = { x: 18+1, y: 8-1 }; //keep zero embbed in mind. Therefore + 1
+        const expected_point: Point = { x: 18 + 1, y: 8 - 1 }; //keep zero embbed in mind. Therefore + 1
         const [last_point] = regions[2].getOuterContour().points.slice(-1);
         expect(last_point).toEqual(expected_point);
     });

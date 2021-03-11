@@ -16,7 +16,7 @@ export class BinaryRegion {
     }
 
     addInnerContourPixel = (pixel: Point): void => {
-        this.innerContours[this.innerContours.length -1].addPoint(pixel);
+        this.innerContours[this.innerContours.length - 1].addPoint(pixel);
         this.regionPixels.push(pixel);
     };
 
