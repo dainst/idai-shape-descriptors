@@ -6,9 +6,9 @@
 import ndarray = require('ndarray');
 
 /**
- * Returns true if image is black
+ * Check if image is black
  * @param {ndarray<number>} image - Input image
- * @returns {boolean} is image black (true) or not
+ * @returns {boolean} tur if image is black
  */
 export const isImageBlack = (image: ndarray<number>): boolean => {
 
