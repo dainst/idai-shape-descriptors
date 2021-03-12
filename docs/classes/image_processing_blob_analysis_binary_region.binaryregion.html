@@ -39,6 +39,8 @@
 							</div>
 							<input type="checkbox" id="tsd-filter-inherited" checked />
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
 						</div>
 					</div>
 					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
@@ -89,6 +91,7 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="image_processing_blob_analysis_binary_region.binaryregion.html#innercontours" class="tsd-kind-icon">inner<wbr>Contours</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="image_processing_blob_analysis_binary_region.binaryregion.html#outercontour" class="tsd-kind-icon">outer<wbr>Contour</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="image_processing_blob_analysis_binary_region.binaryregion.html#regionpixels" class="tsd-kind-icon">region<wbr>Pixels</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -97,9 +100,11 @@
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="image_processing_blob_analysis_binary_region.binaryregion.html#addinnercontour" class="tsd-kind-icon">add<wbr>Inner<wbr>Contour</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="image_processing_blob_analysis_binary_region.binaryregion.html#addinnercontourpixel" class="tsd-kind-icon">add<wbr>Inner<wbr>Contour<wbr>Pixel</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="image_processing_blob_analysis_binary_region.binaryregion.html#addoutercontourpixel" class="tsd-kind-icon">add<wbr>Outer<wbr>Contour<wbr>Pixel</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="image_processing_blob_analysis_binary_region.binaryregion.html#addregionpixel" class="tsd-kind-icon">add<wbr>Region<wbr>Pixel</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="image_processing_blob_analysis_binary_region.binaryregion.html#getinnercontours" class="tsd-kind-icon">get<wbr>Inner<wbr>Contours</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="image_processing_blob_analysis_binary_region.binaryregion.html#getlabel" class="tsd-kind-icon">get<wbr>Label</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="image_processing_blob_analysis_binary_region.binaryregion.html#getoutercontour" class="tsd-kind-icon">get<wbr>Outer<wbr>Contour</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="image_processing_blob_analysis_binary_region.binaryregion.html#getregionpixels" class="tsd-kind-icon">get<wbr>Region<wbr>Pixels</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="image_processing_blob_analysis_binary_region.binaryregion.html#setoutercontour" class="tsd-kind-icon">set<wbr>Outer<wbr>Contour</a></li>
 							</ul>
 						</section>
@@ -118,7 +123,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dainst/idai-shape-descriptors/blob/c9de4d4/src/image_processing/blob_analysis/binary_region.ts#L7">image_processing/blob_analysis/binary_region.ts:7</a></li>
+									<li>Defined in <a href="https://github.com/dainst/idai-shape-descriptors/blob/e03f13d/src/image_processing/blob_analysis/binary_region.ts#L8">blob_analysis/binary_region.ts:8</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -140,7 +145,7 @@
 					<div class="tsd-signature tsd-kind-icon">inner<wbr>Contours<span class="tsd-signature-symbol">:</span> <a href="image_processing_blob_analysis_contour.contour.html" class="tsd-signature-type" data-tsd-kind="Class">Contour</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = ...</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dainst/idai-shape-descriptors/blob/c9de4d4/src/image_processing/blob_analysis/binary_region.ts#L7">image_processing/blob_analysis/binary_region.ts:7</a></li>
+							<li>Defined in <a href="https://github.com/dainst/idai-shape-descriptors/blob/e03f13d/src/image_processing/blob_analysis/binary_region.ts#L7">blob_analysis/binary_region.ts:7</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -150,7 +155,17 @@
 					<div class="tsd-signature tsd-kind-icon">outer<wbr>Contour<span class="tsd-signature-symbol">:</span> <a href="image_processing_blob_analysis_contour.contour.html" class="tsd-signature-type" data-tsd-kind="Class">Contour</a><span class="tsd-signature-symbol"> = ...</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dainst/idai-shape-descriptors/blob/c9de4d4/src/image_processing/blob_analysis/binary_region.ts#L6">image_processing/blob_analysis/binary_region.ts:6</a></li>
+							<li>Defined in <a href="https://github.com/dainst/idai-shape-descriptors/blob/e03f13d/src/image_processing/blob_analysis/binary_region.ts#L6">blob_analysis/binary_region.ts:6</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="regionpixels" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> region<wbr>Pixels</h3>
+					<div class="tsd-signature tsd-kind-icon">region<wbr>Pixels<span class="tsd-signature-symbol">:</span> <a href="../interfaces/image_processing_blob_analysis_point.point.html" class="tsd-signature-type" data-tsd-kind="Interface">Point</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = ...</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/dainst/idai-shape-descriptors/blob/e03f13d/src/image_processing/blob_analysis/binary_region.ts#L8">blob_analysis/binary_region.ts:8</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -167,7 +182,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dainst/idai-shape-descriptors/blob/c9de4d4/src/image_processing/blob_analysis/binary_region.ts#L28">image_processing/blob_analysis/binary_region.ts:28</a></li>
+									<li>Defined in <a href="https://github.com/dainst/idai-shape-descriptors/blob/e03f13d/src/image_processing/blob_analysis/binary_region.ts#L33">blob_analysis/binary_region.ts:33</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -190,7 +205,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dainst/idai-shape-descriptors/blob/c9de4d4/src/image_processing/blob_analysis/binary_region.ts#L16">image_processing/blob_analysis/binary_region.ts:16</a></li>
+									<li>Defined in <a href="https://github.com/dainst/idai-shape-descriptors/blob/e03f13d/src/image_processing/blob_analysis/binary_region.ts#L18">blob_analysis/binary_region.ts:18</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -213,7 +228,30 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dainst/idai-shape-descriptors/blob/c9de4d4/src/image_processing/blob_analysis/binary_region.ts#L20">image_processing/blob_analysis/binary_region.ts:20</a></li>
+									<li>Defined in <a href="https://github.com/dainst/idai-shape-descriptors/blob/e03f13d/src/image_processing/blob_analysis/binary_region.ts#L23">blob_analysis/binary_region.ts:23</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>pixel: <a href="../interfaces/image_processing_blob_analysis_point.point.html" class="tsd-signature-type" data-tsd-kind="Interface">Point</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="addregionpixel" class="tsd-anchor"></a>
+					<h3>add<wbr>Region<wbr>Pixel</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Region<wbr>Pixel<span class="tsd-signature-symbol">(</span>pixel<span class="tsd-signature-symbol">: </span><a href="../interfaces/image_processing_blob_analysis_point.point.html" class="tsd-signature-type" data-tsd-kind="Interface">Point</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dainst/idai-shape-descriptors/blob/e03f13d/src/image_processing/blob_analysis/binary_region.ts#L38">blob_analysis/binary_region.ts:38</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -236,7 +274,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dainst/idai-shape-descriptors/blob/c9de4d4/src/image_processing/blob_analysis/binary_region.ts#L34">image_processing/blob_analysis/binary_region.ts:34</a></li>
+									<li>Defined in <a href="https://github.com/dainst/idai-shape-descriptors/blob/e03f13d/src/image_processing/blob_analysis/binary_region.ts#L44">blob_analysis/binary_region.ts:44</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="image_processing_blob_analysis_contour.contour.html" class="tsd-signature-type" data-tsd-kind="Class">Contour</a><span class="tsd-signature-symbol">[]</span></h4>
@@ -253,7 +291,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dainst/idai-shape-descriptors/blob/c9de4d4/src/image_processing/blob_analysis/binary_region.ts#L33">image_processing/blob_analysis/binary_region.ts:33</a></li>
+									<li>Defined in <a href="https://github.com/dainst/idai-shape-descriptors/blob/e03f13d/src/image_processing/blob_analysis/binary_region.ts#L43">blob_analysis/binary_region.ts:43</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -270,10 +308,27 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dainst/idai-shape-descriptors/blob/c9de4d4/src/image_processing/blob_analysis/binary_region.ts#L35">image_processing/blob_analysis/binary_region.ts:35</a></li>
+									<li>Defined in <a href="https://github.com/dainst/idai-shape-descriptors/blob/e03f13d/src/image_processing/blob_analysis/binary_region.ts#L45">blob_analysis/binary_region.ts:45</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="image_processing_blob_analysis_contour.contour.html" class="tsd-signature-type" data-tsd-kind="Class">Contour</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getregionpixels" class="tsd-anchor"></a>
+					<h3>get<wbr>Region<wbr>Pixels</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Region<wbr>Pixels<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/image_processing_blob_analysis_point.point.html" class="tsd-signature-type" data-tsd-kind="Interface">Point</a><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dainst/idai-shape-descriptors/blob/e03f13d/src/image_processing/blob_analysis/binary_region.ts#L42">blob_analysis/binary_region.ts:42</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/image_processing_blob_analysis_point.point.html" class="tsd-signature-type" data-tsd-kind="Interface">Point</a><span class="tsd-signature-symbol">[]</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -287,7 +342,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dainst/idai-shape-descriptors/blob/c9de4d4/src/image_processing/blob_analysis/binary_region.ts#L24">image_processing/blob_analysis/binary_region.ts:24</a></li>
+									<li>Defined in <a href="https://github.com/dainst/idai-shape-descriptors/blob/e03f13d/src/image_processing/blob_analysis/binary_region.ts#L28">blob_analysis/binary_region.ts:28</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -318,7 +373,13 @@
 						<a href="../modules/image_processing_blob_analysis_contour.html">image_<wbr>processing/blob_<wbr>analysis/contour</a>
 					</li>
 					<li class=" tsd-kind-module">
+						<a href="../modules/image_processing_blob_analysis_contour_tracer.html">image_<wbr>processing/blob_<wbr>analysis/contour_<wbr>tracer</a>
+					</li>
+					<li class=" tsd-kind-module">
 						<a href="../modules/image_processing_blob_analysis_point.html">image_<wbr>processing/blob_<wbr>analysis/point</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/image_processing_blob_analysis_region_labeling.html">image_<wbr>processing/blob_<wbr>analysis/region_<wbr>labeling</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/image_processing_utils_utils.html">image_<wbr>processing/utils/utils</a>
@@ -341,6 +402,9 @@
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
 								<a href="image_processing_blob_analysis_binary_region.binaryregion.html#outercontour" class="tsd-kind-icon">outer<wbr>Contour</a>
 							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="image_processing_blob_analysis_binary_region.binaryregion.html#regionpixels" class="tsd-kind-icon">region<wbr>Pixels</a>
+							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="image_processing_blob_analysis_binary_region.binaryregion.html#addinnercontour" class="tsd-kind-icon">add<wbr>Inner<wbr>Contour</a>
 							</li>
@@ -351,6 +415,9 @@
 								<a href="image_processing_blob_analysis_binary_region.binaryregion.html#addoutercontourpixel" class="tsd-kind-icon">add<wbr>Outer<wbr>Contour<wbr>Pixel</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="image_processing_blob_analysis_binary_region.binaryregion.html#addregionpixel" class="tsd-kind-icon">add<wbr>Region<wbr>Pixel</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="image_processing_blob_analysis_binary_region.binaryregion.html#getinnercontours" class="tsd-kind-icon">get<wbr>Inner<wbr>Contours</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
@@ -358,6 +425,9 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="image_processing_blob_analysis_binary_region.binaryregion.html#getoutercontour" class="tsd-kind-icon">get<wbr>Outer<wbr>Contour</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="image_processing_blob_analysis_binary_region.binaryregion.html#getregionpixels" class="tsd-kind-icon">get<wbr>Region<wbr>Pixels</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="image_processing_blob_analysis_binary_region.binaryregion.html#setoutercontour" class="tsd-kind-icon">set<wbr>Outer<wbr>Contour</a>
