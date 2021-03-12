@@ -1,9 +1,9 @@
-import pack = require('ndarray-pack');
 import { BinaryRegion } from '../../../image_processing/blob_analysis/binary_region';
 import { Point } from '../../../image_processing/blob_analysis/point';
 import { regionLabeling } from '../../../image_processing/blob_analysis/region_labeling';
+import * as tf from '@tensorflow/tfjs';
 
-const binaryImage = pack([
+const binaryImage = tf.tensor2d([
     [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0],//1
     [0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0],//2
     [0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0],//3

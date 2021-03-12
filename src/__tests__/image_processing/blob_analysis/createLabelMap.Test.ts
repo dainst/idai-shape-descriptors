@@ -1,9 +1,8 @@
-import pack = require('ndarray-pack');
 import rewire from 'rewire';
-import ndarray = require('ndarray');
-import { isImageBlack } from '../../../image_processing/utils/utils';
+import { getEntryFromTensor2D, isImageBlack } from '../../../image_processing/utils/utils';
+import * as tf from '@tensorflow/tfjs';
 
-const image = pack([
+const image = tf.tensor2d([
     [0, 1, 1, 0],
     [1, 0, 1, 0],
     [1, 1, 1, 1],
@@ -14,8 +13,8 @@ describe('Test createLabelMap', () => {
 
     const api = rewire('../../../../lib/image_processing/blob_analysis/region_labeling');
     const createLabelMap = api.__get__('createLabelMap');
-    let labelMap: ndarray<number>;
-    let zeroEmbeddedImage: ndarray<number>;
+    let labelMap: tf.Tensor2D;
+    let zeroEmbeddedImage: tf.Tensor2D;
 
     beforeAll(() => {
         const [lM, zEi] = createLabelMap(image);
@@ -33,10 +32,11 @@ describe('Test createLabelMap', () => {
         const [rows, cols] = zeroEmbeddedImage.shape;
         for(let r = 1; r < rows - 1; r++)
             for(let c = 1; c < cols - 1; c++)
-                expect(zeroEmbeddedImage.get(r,c)).toEqual(image.get(r - 1, c - 1));
+                expect(getEntryFromTensor2D(zeroEmbeddedImage, r, c))
+                    .toEqual(getEntryFromTensor2D(image, r - 1, c - 1));
 
         for(let r = 0; r < rows; r++)
-            expect(zeroEmbeddedImage.get(r,0)).toBe(0);
+            expect(getEntryFromTensor2D(zeroEmbeddedImage, r, 0)).toBe(0);
     });
 
     it('Should return a zero valued labelMap', () => {

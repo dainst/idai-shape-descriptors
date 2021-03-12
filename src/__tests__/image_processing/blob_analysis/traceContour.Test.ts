@@ -1,12 +1,12 @@
 /* eslint-disable no-multi-spaces */
-import pack = require('ndarray-pack');
-import pool = require('ndarray-scratch');
 import { Point } from '../../../image_processing/blob_analysis/point';
 import { Contour } from '../../../image_processing/blob_analysis/contour';
 import { traceContour } from '../../../image_processing/blob_analysis/contour_tracer';
+import * as tf from '@tensorflow/tfjs';
+import { getEntryFromTensor2D, setEntryOfTensor2D } from '../../../image_processing/utils/utils';
 
 
-const outerContourImage = pack([
+const outerContourImage = tf.tensor2d([
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],//0
     [0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0],//1
     [0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0],//2
@@ -17,7 +17,7 @@ const outerContourImage = pack([
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],]//7
 );
 
-const expectedOuterContourLabelMap = pack([
+const expectedOuterContourLabelMap = tf.tensor2d([
     [0, 0, 0,  0, -1, -1, -1, -1, -1,  0,  0,  0],//0
     [0, 0, 0, -1, -1,  2,  2,  2, -1, -1, -1, -1],//1
     [0, 0, 0, -1,  2,  0,  0,  0,  2,  2,  2, -1],//2
@@ -48,7 +48,7 @@ const outerContourArray: Point[] = [
     { y: 1, x: 5 },//16
 ];
 
-const innerContourImage = pack([
+const innerContourImage = tf.tensor2d([
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],//0
     [0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0],//1
     [0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0],//2
@@ -82,11 +82,11 @@ describe('Test traceContour function', () => {
     const label = 2;
 
     let outerCnt: Contour;
-    const outerCntLabelMap = pool.zeros(outerContourImage.shape);
-    outerCntLabelMap.set(1,4, label);
+    const outerCntLabelMap = tf.zeros(outerContourImage.shape) as tf.Tensor2D;
+    setEntryOfTensor2D(outerCntLabelMap,{ y: 1, x: 4 }, label);
 
     let innerCnt: Contour;
-    const innerCntLabelMap = pool.zeros(innerContourImage.shape);
+    const innerCntLabelMap = tf.zeros(innerContourImage.shape) as tf.Tensor2D;
     
 
     beforeAll(() => {
@@ -100,11 +100,11 @@ describe('Test traceContour function', () => {
 
     it('Should mark all outer contour pixel with label value', () => {
         for(const point of outerContourArray)
-            expect(outerCntLabelMap.get(point.y, point.x)).toBe(label);
+            expect(getEntryFromTensor2D(outerCntLabelMap, point.y, point.x)).toBe(label);
     });
 
     it('Should mark labelMap as expected', () => {
-        expect(outerCntLabelMap).toEqual(expectedOuterContourLabelMap);
+        expect(outerCntLabelMap.toString()).toEqual(expectedOuterContourLabelMap.toString());
     });
 
     it('Should detect inner contour', () => {

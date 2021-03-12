@@ -1,12 +1,13 @@
 import { isImageBlack } from '../../../image_processing/utils/utils';
-import ndarray = require('ndarray');
-import pool = require('ndarray-scratch');
+import * as tf from '@tensorflow/tfjs';
 
 
 test('isImageBlack false for non black image', () => {
-    expect(isImageBlack( ndarray(new Uint8Array([1, 0, 0, 1]), [2,2]) )).toBe(false);
+
+    const image = tf.tensor2d([1, 0, 0, 1], [2,2]);
+    expect(isImageBlack( image)).toBe(false);
 });
 
 test('isImageBlack true for black image', () => {
-    expect(isImageBlack( pool.zeros([5,5]) )).toBe(true);
+    expect(isImageBlack( tf.zeros([5,5]) )).toBe(true);
 });
