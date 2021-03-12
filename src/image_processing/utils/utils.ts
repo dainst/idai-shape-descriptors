@@ -49,3 +49,6 @@ export const tensorToBinaryImage = (tensor: tf.Tensor ): ndarray<number> => {
 
     return image;
 };
+
+
+export const getEntryFromTensor2D = (x: tf.Tensor2D , row: number, col: number): number => x.bufferSync().get(row,col);
