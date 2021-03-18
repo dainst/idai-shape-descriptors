@@ -1,5 +1,5 @@
 {
-  "name": "idai-shape-descriptors",
+  "name": "@dainst/idai-shape-descriptors",
   "version": "1.0.0",
   "description": "Shape descriptors for iDai.shapes",
   "main": "lib/index.js",
