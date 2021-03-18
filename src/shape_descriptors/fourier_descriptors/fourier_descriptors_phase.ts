@@ -98,9 +98,57 @@ export const setDescriptorTranslationInvariant = (descriptor: tf.Tensor): tf.Ten
 
 export const setDescriptorScaleInvariant = (descriptor: tf.Tensor): tf.Tensor => {
 
-    const descriptorLength = descriptor.shape[0];
-    const harmonics = (descriptorLength - 1) / 2;
+    const harmonics = getDescriptorHarmonics(descriptor);
     const s = tf.add(tf.abs(descriptor).slice(1, harmonics), tf.abs(descriptor).slice(harmonics + 1, -1)).sum();
     const v = tf.divNoNan(1,tf.sqrt(s)).arraySync();
     return tf.mul(descriptor, tf.tensor1d(Array(descriptor.shape[0]).fill(v)));
 };
+
+ /**
+ * Returns start point phase phi by maximizing function _fp(descriptor,phi), with phi [0,np.pi)
+ * The maximum is simple brute-force search (OPTIMIZE!!)
+ * @param {tf.Tensor} descriptor - Fourier descriptor
+ * @returns {number} Start point phase
+ */
+export const getStartPointPhase = (descriptor: tf.Tensor): number => {
+
+    let cMax = -Number.MAX_VALUE;
+    let phiMax = 0;
+    const K = 400; //brute force with 400 steps TO DO: OPTIMIZE!!
+
+    for(let k = 0; k < K; k++){
+        const phi = Math.PI * k / K;
+        if( fp(descriptor, phi) > cMax){
+            cMax = fp(descriptor, phi);
+            phiMax = phi;
+        }
+    }
+    return phiMax;
+};
+
+
+/**
+ * Look for quantity that depends only on the phase differneces within the Fourier descriptor pairs
+ * @param {tf.Tensor} descriptor - Fourier descriptor
+ */
+const fp = (descriptor: tf.Tensor, phi: number) => {
+
+    let s = 0;
+    for(let m = 1; m < getDescriptorHarmonics(descriptor) + 1; m++){
+        const phiM = m * phi;
+        const z1 = tf.mul(getElementFromComplexTensor(descriptor, descriptor.shape[0] - m),
+                    tf.complex(tf.cos(phiM), tf.sin(-phiM)));
+        const z2 = tf.mul(getElementFromComplexTensor(descriptor, m),
+                    tf.complex(tf.cos(phiM), tf.sin(phiM)));
+        s += tf.sub(
+                tf.mul(tf.real(z1), tf.imag(z2)),
+                tf.mul(tf.imag(z1), tf.real(z2))).arraySync() as number;
+    }
+    return s;
+};
+
+const getElementFromComplexTensor = (tensor: tf.Tensor, index: number): tf.Tensor =>
+    tf.complex((tf.real(tensor).arraySync() as number[])[index],
+                (tf.imag(tensor).arraySync() as number[])[index]);
+
+const getDescriptorHarmonics = (descriptor: tf.Tensor): number => (descriptor.shape[0] - 1) / 2;
