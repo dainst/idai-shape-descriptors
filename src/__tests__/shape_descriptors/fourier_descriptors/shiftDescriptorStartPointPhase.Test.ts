@@ -1,5 +1,6 @@
 import * as tf from '@tensorflow/tfjs';
-import { shiftDescriptorStartPointPhase } from '../../../shape_descriptors/fourier_descriptors/fourier_descriptors_phase';
+import { shiftDescriptorStartPointPhase } from
+    '../../../shape_descriptors/fourier_descriptors/fourier_descriptors_phase';
 
 describe('Test shiftDescriptorStartPointPhase', () => {
     const phi = 0.023561944901923447;
