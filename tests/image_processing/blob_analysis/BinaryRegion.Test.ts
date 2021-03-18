@@ -1,6 +1,6 @@
-import { BinaryRegion } from '../../../image_processing/blob_analysis/binary_region';
-import { Contour } from '../../../image_processing/blob_analysis/contour';
-import { Point } from '../../../image_processing/blob_analysis/point';
+import { BinaryRegion } from '../../../src/image_processing/blob_analysis/binary_region';
+import { Contour } from '../../../src/image_processing/blob_analysis/contour';
+import { Point } from '../../../src/image_processing/blob_analysis/point';
 
 
 const label = 3;

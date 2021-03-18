@@ -1,6 +1,6 @@
 import * as tf from '@tensorflow/tfjs';
-import { Point } from '../../../image_processing/blob_analysis/point';
-import { setEntryOfTensor2D } from '../../../image_processing/utils/utils';
+import { Point } from '../../../src/image_processing/blob_analysis/point';
+import { setEntryOfTensor2D } from '../../../src/image_processing/utils/utils';
 
 describe('setEntryOfTensor2D', () => {
     const image = [

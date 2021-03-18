@@ -3,7 +3,7 @@ import {
     addPoints,
     isEqualPoints,
     toArray,
-    subtractPoints } from '../../../image_processing/blob_analysis/point';
+    subtractPoints } from '../../../src/image_processing/blob_analysis/point';
 
 test('Should add points with addPoints', () => {
     const p1: Point = { x: 2, y: 4 };

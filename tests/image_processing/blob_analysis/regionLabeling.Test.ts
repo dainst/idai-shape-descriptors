@@ -1,6 +1,6 @@
-import { BinaryRegion } from '../../../image_processing/blob_analysis/binary_region';
-import { Point } from '../../../image_processing/blob_analysis/point';
-import { regionLabeling } from '../../../image_processing/blob_analysis/region_labeling';
+import { BinaryRegion } from '../../../src/image_processing/blob_analysis/binary_region';
+import { Point } from '../../../src/image_processing/blob_analysis/point';
+import { regionLabeling } from '../../../src/image_processing/blob_analysis/region_labeling';
 import * as tf from '@tensorflow/tfjs';
 
 const binaryImage = tf.tensor2d([

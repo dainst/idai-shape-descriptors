@@ -1,5 +1,5 @@
-import { Contour, contourLength } from '../../../image_processing/blob_analysis/contour';
-import { Point } from '../../../image_processing/blob_analysis/point';
+import { Contour, contourLength } from '../../../src/image_processing/blob_analysis/contour';
+import { Point } from '../../../src/image_processing/blob_analysis/point';
 
 
 describe ('Test contourLength', () => {

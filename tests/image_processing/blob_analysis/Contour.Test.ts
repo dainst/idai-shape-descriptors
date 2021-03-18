@@ -1,4 +1,4 @@
-import { Contour } from '../../../image_processing/blob_analysis/contour';
+import { Contour } from '../../../src/image_processing/blob_analysis/contour';
 
 let contour: Contour;
 

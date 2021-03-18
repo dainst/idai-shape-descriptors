@@ -1,4 +1,4 @@
-import { isImageBlack } from '../../../image_processing/utils/utils';
+import { isImageBlack } from '../../../src/image_processing/utils/utils';
 import * as tf from '@tensorflow/tfjs';
 
 

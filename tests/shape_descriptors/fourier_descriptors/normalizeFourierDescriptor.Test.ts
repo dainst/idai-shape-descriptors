@@ -1,4 +1,5 @@
-import { normalizeFourierDescriptor } from '../../../shape_descriptors/fourier_descriptors/fourier_descriptors_phase';
+import { normalizeFourierDescriptor } from
+    '../../../src/shape_descriptors/fourier_descriptors/fourier_descriptors_phase';
 import * as tf from '@tensorflow/tfjs';
 
 describe('Test normalizeFourierDescriptor', () => {

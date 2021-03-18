@@ -1,10 +1,10 @@
 import rewire from 'rewire';
-import { Point } from '../../../image_processing/blob_analysis/point';
+import { Point } from '../../../src/image_processing/blob_analysis/point';
 import * as tf from '@tensorflow/tfjs';
 
 
 describe('Test function findNextPoint', ()=> {
-    const api = rewire('../../../../lib/image_processing/blob_analysis/contour_tracer');
+    const api = rewire('../../../lib/image_processing/blob_analysis/contour_tracer');
     const findNextPoint = api.__get__('findNextPoint');
     
     it('Should return start pixel if no neighbour pixel is found', () => {

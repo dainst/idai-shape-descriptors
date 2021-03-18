@@ -1,9 +1,9 @@
 /* eslint-disable no-multi-spaces */
-import { Point } from '../../../image_processing/blob_analysis/point';
-import { Contour } from '../../../image_processing/blob_analysis/contour';
-import { traceContour } from '../../../image_processing/blob_analysis/contour_tracer';
+import { Point } from '../../../src/image_processing/blob_analysis/point';
+import { Contour } from '../../../src/image_processing/blob_analysis/contour';
+import { traceContour } from '../../../src/image_processing/blob_analysis/contour_tracer';
 import * as tf from '@tensorflow/tfjs';
-import { getEntryFromTensor2D, setEntryOfTensor2D } from '../../../image_processing/utils/utils';
+import { getEntryFromTensor2D, setEntryOfTensor2D } from '../../../src/image_processing/utils/utils';
 
 
 const outerContourImage = tf.tensor2d([

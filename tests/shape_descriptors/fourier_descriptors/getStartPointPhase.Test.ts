@@ -1,5 +1,5 @@
 import * as tf from '@tensorflow/tfjs';
-import { getStartPointPhase } from '../../../shape_descriptors/fourier_descriptors/fourier_descriptors_phase';
+import { getStartPointPhase } from '../../../src/shape_descriptors/fourier_descriptors/fourier_descriptors_phase';
 
 describe('Test getStartPointPhase', () => {
     const expectedValue = 0.023561944901923447;

@@ -1,4 +1,4 @@
-import { getEntryFromTensor2D } from '../../../image_processing/utils/utils';
+import { getEntryFromTensor2D } from '../../../src/image_processing/utils/utils';
 import * as tf from '@tensorflow/tfjs';
 
 describe('getEntryFromTensor2D', () => {

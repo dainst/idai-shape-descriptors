@@ -1,6 +1,6 @@
 import * as tf from '@tensorflow/tfjs';
 import { setDescriptorTranslationInvariant } from
-    '../../../shape_descriptors/fourier_descriptors/fourier_descriptors_phase';
+    '../../../src/shape_descriptors/fourier_descriptors/fourier_descriptors_phase';
 
 describe('Test setDescriptorTranslationInvariant', () => {
 

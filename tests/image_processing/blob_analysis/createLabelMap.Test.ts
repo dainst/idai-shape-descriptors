@@ -1,5 +1,5 @@
 import rewire from 'rewire';
-import { getEntryFromTensor2D, isImageBlack } from '../../../image_processing/utils/utils';
+import { getEntryFromTensor2D, isImageBlack } from '../../../src/image_processing/utils/utils';
 import * as tf from '@tensorflow/tfjs';
 
 const image = tf.tensor2d([
@@ -11,7 +11,7 @@ const image = tf.tensor2d([
 
 describe('Test createLabelMap', () => {
 
-    const api = rewire('../../../../lib/image_processing/blob_analysis/region_labeling');
+    const api = rewire('../../../lib/image_processing/blob_analysis/region_labeling');
     const createLabelMap = api.__get__('createLabelMap');
     let labelMap: tf.Tensor2D;
     let zeroEmbeddedImage: tf.Tensor2D;

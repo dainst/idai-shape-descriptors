@@ -2,7 +2,7 @@ import rewire from 'rewire';
 
 describe('Test getNextNeighbourPixel function',() => {
 
-    const api = rewire('../../../../lib/image_processing/blob_analysis/contour_tracer');
+    const api = rewire('../../../lib/image_processing/blob_analysis/contour_tracer');
     const getNextNeighbourPixel = api.__get__('getNextNeighbourPixel');
 
     it('Should return correct neighbour pixel for search direction 0', () => {

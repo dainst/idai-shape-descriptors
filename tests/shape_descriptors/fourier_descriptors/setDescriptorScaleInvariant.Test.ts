@@ -1,5 +1,6 @@
 import * as tf from '@tensorflow/tfjs';
-import { setDescriptorScaleInvariant } from '../../../shape_descriptors/fourier_descriptors/fourier_descriptors_phase';
+import { setDescriptorScaleInvariant } from
+    '../../../src/shape_descriptors/fourier_descriptors/fourier_descriptors_phase';
 
 describe('Test setDescriptorScaleInvariant', () => {
 
