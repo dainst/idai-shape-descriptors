@@ -67,6 +67,22 @@ const makeFourierDescriptorFromPolygon = (contour: Point[], harmonics: number = 
     return tf.complex(FD_real, FD_complex);
 };
 
+
+/**
+ * Normalizes Fourier Descriptor and concatenates imaginary and real values 
+ * of phase shifted descriptors G_a and G_b
+ * @param {tf.Tensor} descriptor - Unnormalized Fourier Descriptor
+ */
+export const normalizeFourierDescriptor = (descriptor: tf.Tensor ): tf.Tensor => {
+
+    const transDescriptor = setDescriptorTranslationInvariant(descriptor);
+    const scaleDescriptor = setDescriptorScaleInvariant(transDescriptor);
+    const [G_a, G_b] = setDescriptorStartPointInvariant(scaleDescriptor);
+
+    return tf.concat([tf.real(G_a), tf.imag(G_a), tf.real(G_b), tf.imag(G_b)]);
+};
+
+
 const getTrigometricCoefficient = (
         omega0: Float32Array,
         omega1: Float32Array,
@@ -106,6 +122,20 @@ export const setDescriptorScaleInvariant = (descriptor: tf.Tensor): tf.Tensor =>
 
 
 /**
+ * Makes the Fourier descriptor invariant to start point phase phi and phi + Math.PI
+ * @param {tf.Tensor} - Fourier Descriptor
+ * @returns {tf.Tensor} descriptor shifted by phi and phi + PI
+ */
+export const setDescriptorStartPointInvariant = (descriptor: tf.Tensor): [tf.Tensor, tf.Tensor] => {
+
+    const phi = getStartPointPhase(descriptor);
+    const G_a = shiftDescriptorStartPointPhase(descriptor, phi);
+    const G_b = shiftDescriptorStartPointPhase(descriptor, phi + Math.PI);
+    return [G_a, G_b];
+};
+
+
+/**
  * Normalizes discriptor by shifting start point phase
  * @param {tf.Tensor} descriptor - Fourier descriptor
  * @param {number} phi - start point phase
@@ -129,6 +159,7 @@ export const shiftDescriptorStartPointPhase = (descriptor: tf.Tensor, phi: numbe
     return tf.mul(descriptor, mulTensor);
 
 };
+
 
  /**
  * Returns start point phase phi by maximizing function _fp(descriptor,phi), with phi [0,np.pi)
