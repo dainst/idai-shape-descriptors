@@ -94,3 +94,13 @@ export const setDescriptorTranslationInvariant = (descriptor: tf.Tensor): tf.Ten
     const maskArray = Array(descriptor.shape[0]).fill(1).map((val,i) => i !== 0 ? val : 0);
     return tf.mul(descriptor, tf.tensor1d(maskArray));
 };
+
+
+export const setDescriptorScaleInvariant = (descriptor: tf.Tensor): tf.Tensor => {
+
+    const descriptorLength = descriptor.shape[0];
+    const harmonics = (descriptorLength - 1) / 2;
+    const s = tf.add(tf.abs(descriptor).slice(1, harmonics), tf.abs(descriptor).slice(harmonics + 1, -1)).sum();
+    const v = tf.divNoNan(1,tf.sqrt(s)).arraySync();
+    return tf.mul(descriptor, tf.tensor1d(Array(descriptor.shape[0]).fill(v)));
+};
