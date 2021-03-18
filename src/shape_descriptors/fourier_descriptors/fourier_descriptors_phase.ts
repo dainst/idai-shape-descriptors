@@ -89,8 +89,8 @@ const getTrigometricCoefficient = (
     return sum.dataSync()[0];
 };
 
-export const setDescriptorTranslationInvariant = (desciptor: tf.Tensor): tf.Tensor => {
+export const setDescriptorTranslationInvariant = (descriptor: tf.Tensor): tf.Tensor => {
 
-    const maskArray = Array(desciptor.shape[0]).fill(1).map((val,i) => i !== 0 ? val : 0);
-    return tf.mul(desciptor, tf.tensor1d(maskArray));
+    const maskArray = Array(descriptor.shape[0]).fill(1).map((val,i) => i !== 0 ? val : 0);
+    return tf.mul(descriptor, tf.tensor1d(maskArray));
 };
