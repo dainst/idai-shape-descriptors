@@ -104,6 +104,32 @@ export const setDescriptorScaleInvariant = (descriptor: tf.Tensor): tf.Tensor =>
     return tf.mul(descriptor, tf.tensor1d(Array(descriptor.shape[0]).fill(v)));
 };
 
+
+/**
+ * Normalizes discriptor by shifting start point phase
+ * @param {tf.Tensor} descriptor - Fourier descriptor
+ * @param {number} phi - start point phase
+ * @returns {tf.Tensor} - Normalized Fourier descriptor
+ */
+export const shiftDescriptorStartPointPhase = (descriptor: tf.Tensor, phi: number): tf.Tensor => {
+    const mulArrayReal = [0];
+    const mulArrayImag = [0];
+    for(let m = 1; m < descriptor.shape[0]; m++){
+        if(m < getDescriptorHarmonics(descriptor) + 1){
+            const phiM = m * phi;
+            mulArrayReal.push(Math.cos(phiM));
+            mulArrayImag.push(Math.sin(phiM));
+        } else {
+            const phiM = (descriptor.shape[0] - m) * phi;
+            mulArrayReal.push(Math.cos(phiM));
+            mulArrayImag.push(Math.sin(-phiM));
+        }
+    }
+    const mulTensor = tf.complex(mulArrayReal, mulArrayImag);
+    return tf.mul(descriptor, mulTensor);
+
+};
+
  /**
  * Returns start point phase phi by maximizing function _fp(descriptor,phi), with phi [0,np.pi)
  * The maximum is simple brute-force search (OPTIMIZE!!)
