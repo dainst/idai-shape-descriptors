@@ -1,11 +1,10 @@
-import rewire from 'rewire';
 import * as tf from '@tensorflow/tfjs';
 import { Point } from '../../../src/image_processing/blob_analysis/point';
+import { makeFourierDescriptorFromPolygon } from
+    '../../../src/shape_descriptors/fourier_descriptors/fourier_descriptors_phase';
 
 describe('Test makeFourierDescriptorFromPolygon', () => {
     let inputPoints: Point[];
-    const api = rewire('../../../lib/shape_descriptors/fourier_descriptors/fourier_descriptors_phase');
-    const makeFourierDescriptorFromPolygon = api.__get__('makeFourierDescriptorFromPolygon');
     const harmonics = 40;
     let descriptors: tf.Tensor;
     

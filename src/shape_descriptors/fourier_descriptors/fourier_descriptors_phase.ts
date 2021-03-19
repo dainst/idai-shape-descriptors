@@ -19,7 +19,7 @@ import { Point, subtractPoints, toArray } from '../../image_processing/blob_anal
  * @param {number} harmonics -  The number of harmonics to compute for the given shape
  * @returns {tf.Tensor} complex valued Fourier descriptors
  */
-const makeFourierDescriptorFromPolygon = (contour: Point[], harmonics: number = 40): tf.Tensor => {
+export const makeFourierDescriptorFromPolygon = (contour: Point[], harmonics: number = 40): tf.Tensor => {
 
     const new_vector_length = 2 * harmonics + 1;
     const N = contour.length;
