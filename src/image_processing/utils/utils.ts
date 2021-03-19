@@ -30,3 +30,24 @@ export const getEntryFromTensor2D = (x: tf.Tensor2D , row: number, col: number):
 
 export const setEntryOfTensor2D = (x: tf.Tensor2D , point: Point, value: number): void =>
     x.bufferSync().set(value,point.y, point.x );
+
+
+/**
+ * Converts RGB image to grayscale image
+ * @param {tf.Tensor3D} rgbImage - RGB image
+ * @param {number} scale - Value to scale eacht image pixel
+ * @returns {tf.Tensor2D} Grayscale image
+ */
+export const rgbToGrayscale = (rgbImage: tf.Tensor3D, scale: number = 1): tf.Tensor2D => {
+  
+    const [rows, cols, _] = rgbImage.shape;
+    const [r, g, b] = tf.split(rgbImage, 3, 2);
+    const gray = tf.addN([
+        tf.mul(r, tf.scalar(0.3)),
+        tf.mul(g, tf.scalar(0.59)),
+        tf.mul(b, tf.scalar(0.11))
+    ]);
+    const out = scale !== 1 ? tf.mul(gray, tf.scalar(1 / scale)) : gray;
+    
+    return tf.cast(out,'int32').reshape([rows, cols]) as tf.Tensor2D;
+};

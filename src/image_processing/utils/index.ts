@@ -1,2 +1,2 @@
-import { isImageBlack } from './utils';
-export { isImageBlack };
+import { isImageBlack, rgbToGrayscale } from './utils';
+export { isImageBlack, rgbToGrayscale };
