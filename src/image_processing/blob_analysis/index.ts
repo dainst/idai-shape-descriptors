@@ -1,6 +1,6 @@
 import { regionLabeling } from './region_labeling';
-import { contourLength } from './contour';
+import { contourLength, getLongesOuterContourOfRegions } from './contour';
 import { Point, addPoints, subtractPoints, arePointsEqual } from './point';
 
 export { regionLabeling, contourLength,
-         Point, addPoints, subtractPoints, arePointsEqual };
+         Point, addPoints, subtractPoints, arePointsEqual, getLongesOuterContourOfRegions };
