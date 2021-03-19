@@ -1,4 +1,4 @@
-import {makeFourierDescriptorFromPolygon,
-        normalizeFourierDescriptor} from './fourier_descriptors_phase';
+import { makeFourierDescriptorFromPolygon,
+        normalizeFourierDescriptor } from './fourier_descriptors_phase';
 
-export {makeFourierDescriptorFromPolygon, normalizeFourierDescriptor};
+export { makeFourierDescriptorFromPolygon, normalizeFourierDescriptor };
