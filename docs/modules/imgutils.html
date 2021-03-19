@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>image_processing/blob_analysis/binary_region | idai-shape-descriptors</title>
-	<meta name="description" content="Documentation for idai-shape-descriptors">
+	<title>imgutils | @dainst/idai-shape-descriptors</title>
+	<meta name="description" content="Documentation for @dainst/idai-shape-descriptors">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
 	<script async src="../assets/js/search.js" id="search-script"></script>
@@ -23,7 +23,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">idai-shape-descriptors</a>
+					<a href="../index.html" class="title">@dainst/idai-shape-descriptors</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -52,13 +52,13 @@
 		<div class="container">
 			<ul class="tsd-breadcrumb">
 				<li>
-					<a href="../modules.html">idai-shape-descriptors</a>
+					<a href="../modules.html">@dainst/idai-shape-descriptors</a>
 				</li>
 				<li>
-					<a href="image_processing_blob_analysis_binary_region.html">image_processing/blob_analysis/binary_region</a>
+					<a href="imgutils.html">imgutils</a>
 				</li>
 			</ul>
-			<h1>Module image_processing/blob_analysis/binary_region</h1>
+			<h1>Namespace imgutils</h1>
 		</div>
 	</div>
 </header>
@@ -70,12 +70,47 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Classes</h3>
+							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/image_processing_blob_analysis_binary_region.binaryregion.html" class="tsd-kind-icon">Binary<wbr>Region</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="imgutils.html#isimageblack" class="tsd-kind-icon">is<wbr>Image<wbr>Black</a></li>
 							</ul>
 						</section>
 					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-namespace">
+					<a name="isimageblack" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> is<wbr>Image<wbr>Black</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Image<wbr>Black<span class="tsd-signature-symbol">(</span>image<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Tensor2D</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dainst/idai-shape-descriptors/blob/6777746/src/image_processing/utils/utils.ts#L14">image_processing/utils/utils.ts:14</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Check if image is black</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>image: <span class="tsd-signature-type">Tensor2D</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Input image</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<p>tur if image is black</p>
+						</li>
+					</ul>
 				</section>
 			</section>
 		</div>
@@ -85,33 +120,21 @@
 					<li class=" ">
 						<a href="../modules.html">Exports</a>
 					</li>
-					<li class="current tsd-kind-module">
-						<a href="image_processing_blob_analysis_binary_region.html">image_<wbr>processing/blob_<wbr>analysis/binary_<wbr>region</a>
+					<li class=" tsd-kind-namespace">
+						<a href="blob.html">blob</a>
 					</li>
-					<li class=" tsd-kind-module">
-						<a href="image_processing_blob_analysis_constants.html">image_<wbr>processing/blob_<wbr>analysis/constants</a>
+					<li class=" tsd-kind-namespace">
+						<a href="descr.html">descr</a>
 					</li>
-					<li class=" tsd-kind-module">
-						<a href="image_processing_blob_analysis_contour.html">image_<wbr>processing/blob_<wbr>analysis/contour</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="image_processing_blob_analysis_contour_tracer.html">image_<wbr>processing/blob_<wbr>analysis/contour_<wbr>tracer</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="image_processing_blob_analysis_point.html">image_<wbr>processing/blob_<wbr>analysis/point</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="image_processing_blob_analysis_region_labeling.html">image_<wbr>processing/blob_<wbr>analysis/region_<wbr>labeling</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="image_processing_utils_utils.html">image_<wbr>processing/utils/utils</a>
+					<li class="current tsd-kind-namespace">
+						<a href="imgutils.html">imgutils</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/image_processing_blob_analysis_binary_region.binaryregion.html" class="tsd-kind-icon">Binary<wbr>Region</a>
+					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+						<a href="imgutils.html#isimageblack" class="tsd-kind-icon">is<wbr>Image<wbr>Black</a>
 					</li>
 				</ul>
 			</nav>
@@ -122,16 +145,6 @@
 	<div class="container">
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
-			<ul class="tsd-legend">
-				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
-				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
-			</ul>
 		</div>
 	</div>
 </footer>
