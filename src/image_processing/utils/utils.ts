@@ -9,7 +9,7 @@ import { Point } from '../blob_analysis/point';
 /**
  * Check if image is black
  * @param {tf.Tensor2D} image - Input image
- * @returns {boolean} tur if image is black
+ * @returns {boolean} True if image is black
  */
 export const isImageBlack = (image: tf.Tensor2D): boolean => {
 
