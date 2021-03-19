@@ -12,5 +12,5 @@ export const subtractPoints = (p1: Point, p2: Point): Point => {return { x: p1.x
 
 export const toArray = (p: Point): number[] => [p.x, p.y];
 
-export const isEqualPoints = (p1: Point, p2: Point): boolean =>
+export const arePointsEqual = (p1: Point, p2: Point): boolean =>
     p1.x === p2.x && p1.y === p2.y;

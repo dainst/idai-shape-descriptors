@@ -6,7 +6,7 @@
  */
 import { BACKGROUND } from './constants';
 import { Contour } from './contour';
-import { addPoints, isEqualPoints, Point } from './point';
+import { addPoints, arePointsEqual, Point } from './point';
 import * as tf from '@tensorflow/tfjs';
 import { getEntryFromTensor2D, setEntryOfTensor2D } from '../utils/utils';
 
@@ -28,7 +28,7 @@ export const traceContour = (startPoint: Point, searchDirection: 0 | 1, label: n
 
     let previousPoint = startPoint;
     let currentPoint = successorPoint;
-    let done = isEqualPoints(startPoint, successorPoint);
+    let done = arePointsEqual(startPoint, successorPoint);
     let d_n = dNext;
 
     while(!done){
@@ -40,7 +40,7 @@ export const traceContour = (startPoint: Point, searchDirection: 0 | 1, label: n
         previousPoint = currentPoint ;
         currentPoint = newPoint ;
 
-        done = isEqualPoints(previousPoint, startPoint) && isEqualPoints(currentPoint, successorPoint);
+        done = arePointsEqual(previousPoint, startPoint) && arePointsEqual(currentPoint, successorPoint);
         if(!done) contour.addPoint(newPoint);
     }
     return contour;
