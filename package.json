@@ -1,6 +1,9 @@
 {
   "name": "@dainst/idai-shape-descriptors",
   "version": "1.0.0",
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "Shape descriptors for iDai.shapes",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
