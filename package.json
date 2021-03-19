@@ -8,8 +8,8 @@
     "test": "npm run build && jest --config jestconfig.json",
     "build": "tsc",
     "prepare": "npm run build",
-    "prepublishOnly": "npm test",
-    "version": "git add -A src",
+    "prepublishOnly": "npm test && npm run doc",
+    "version": "git add -A src && git add -A docs",
     "postversion": "git push && git push --tags",
     "doc": "typedoc --options typedoc.json"
   },
