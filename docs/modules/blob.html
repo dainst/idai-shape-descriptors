@@ -81,6 +81,7 @@
 								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="blob.html#addpoints" class="tsd-kind-icon">add<wbr>Points</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="blob.html#arepointsequal" class="tsd-kind-icon">are<wbr>Points<wbr>Equal</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="blob.html#contourlength" class="tsd-kind-icon">contour<wbr>Length</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="blob.html#getlongesoutercontourofregions" class="tsd-kind-icon">get<wbr>Longes<wbr>Outer<wbr>Contour<wbr>OfRegions</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="blob.html#regionlabeling" class="tsd-kind-icon">region<wbr>Labeling</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-namespace"><a href="blob.html#subtractpoints" class="tsd-kind-icon">subtract<wbr>Points</a></li>
 							</ul>
@@ -100,7 +101,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dainst/idai-shape-descriptors/blob/4400cd4/src/image_processing/blob_analysis/point.ts#L6">image_processing/blob_analysis/point.ts:6</a></li>
+									<li>Defined in <a href="https://github.com/dainst/idai-shape-descriptors/blob/7ab3c32/src/image_processing/blob_analysis/point.ts#L6">image_processing/blob_analysis/point.ts:6</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -126,7 +127,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dainst/idai-shape-descriptors/blob/4400cd4/src/image_processing/blob_analysis/point.ts#L15">image_processing/blob_analysis/point.ts:15</a></li>
+									<li>Defined in <a href="https://github.com/dainst/idai-shape-descriptors/blob/7ab3c32/src/image_processing/blob_analysis/point.ts#L15">image_processing/blob_analysis/point.ts:15</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -152,7 +153,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dainst/idai-shape-descriptors/blob/4400cd4/src/image_processing/blob_analysis/contour.ts#L11">image_processing/blob_analysis/contour.ts:11</a></li>
+									<li>Defined in <a href="https://github.com/dainst/idai-shape-descriptors/blob/7ab3c32/src/image_processing/blob_analysis/contour.ts#L12">image_processing/blob_analysis/contour.ts:12</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -166,6 +167,38 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-namespace">
+					<a name="getlongesoutercontourofregions" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> get<wbr>Longes<wbr>Outer<wbr>Contour<wbr>OfRegions</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Longes<wbr>Outer<wbr>Contour<wbr>OfRegions<span class="tsd-signature-symbol">(</span>regions<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">BinaryRegion</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Contour</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dainst/idai-shape-descriptors/blob/7ab3c32/src/image_processing/blob_analysis/contour.ts#L31">image_processing/blob_analysis/contour.ts:31</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Find region with longest outer contour and return its outer contour.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>regions: <span class="tsd-signature-type">BinaryRegion</span><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Array of binary regions</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Contour</span></h4>
+							<p>Outer contour of region with longest outer contour.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-namespace">
 					<a name="regionlabeling" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> region<wbr>Labeling</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-namespace">
@@ -175,7 +208,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dainst/idai-shape-descriptors/blob/4400cd4/src/image_processing/blob_analysis/region_labeling.ts#L22">image_processing/blob_analysis/region_labeling.ts:22</a></li>
+									<li>Defined in <a href="https://github.com/dainst/idai-shape-descriptors/blob/7ab3c32/src/image_processing/blob_analysis/region_labeling.ts#L22">image_processing/blob_analysis/region_labeling.ts:22</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -209,7 +242,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dainst/idai-shape-descriptors/blob/4400cd4/src/image_processing/blob_analysis/point.ts#L11">image_processing/blob_analysis/point.ts:11</a></li>
+									<li>Defined in <a href="https://github.com/dainst/idai-shape-descriptors/blob/7ab3c32/src/image_processing/blob_analysis/point.ts#L11">image_processing/blob_analysis/point.ts:11</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -257,6 +290,9 @@
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-namespace">
 						<a href="blob.html#contourlength" class="tsd-kind-icon">contour<wbr>Length</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-namespace">
+						<a href="blob.html#getlongesoutercontourofregions" class="tsd-kind-icon">get<wbr>Longes<wbr>Outer<wbr>Contour<wbr>OfRegions</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-namespace">
 						<a href="blob.html#regionlabeling" class="tsd-kind-icon">region<wbr>Labeling</a>

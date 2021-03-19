@@ -1,6 +1,6 @@
 {
   "name": "@dainst/idai-shape-descriptors",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "publishConfig": {
     "access": "public"
   },
@@ -52,8 +52,9 @@
       "@typescript-eslint/no-unused-vars": [
         "warn",
         {
-          "varsIgnorePattern": "_" 
-        }],
+          "varsIgnorePattern": "_"
+        }
+      ],
       "@typescript-eslint/array-type": [
         "warn",
         {
