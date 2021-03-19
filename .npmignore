@@ -1,0 +1,12 @@
+# directories
+node_modules
+docs
+.vscode
+.github
+tests
+
+#files
+*.DS_Store
+.gitignore
+jestconfig.json
+typedoc.json
