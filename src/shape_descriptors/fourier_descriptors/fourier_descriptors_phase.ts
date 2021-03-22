@@ -6,6 +6,7 @@
  */
 import * as tf from '@tensorflow/tfjs';
 import { Point, subtractPoints, toArray } from '../../image_processing/blob_analysis/point';
+import { fp, getDescriptorHarmonics } from './utils';
 
 
  /**
@@ -169,43 +170,14 @@ export const shiftDescriptorStartPointPhase = (descriptor: tf.Tensor, phi: numbe
  */
 export const getStartPointPhase = (descriptor: tf.Tensor): number => {
 
-    let cMax = -Number.MAX_VALUE;
-    let phiMax = 0;
     const K = 400; //brute force with 400 steps TO DO: OPTIMIZE!!
-
-    for(let k = 0; k < K; k++){
-        const phi = Math.PI * k / K;
-        if( fp(descriptor, phi) > cMax){
-            cMax = fp(descriptor, phi);
-            phiMax = phi;
-        }
-    }
-    return phiMax;
+    const rangeArray = Array(K).fill(0);
+    const phis = rangeArray.map((_, i) => {
+        const phi = (Math.PI * i) / K;
+        return {
+            phi: phi,
+            c: fp(descriptor, phi)
+        };
+    });
+    return phis.reduce((prev,curent) => curent.c > prev.c ? curent : prev).phi;
 };
-
-
-/**
- * Look for quantity that depends only on the phase differneces within the Fourier descriptor pairs
- * @param {tf.Tensor} descriptor - Fourier descriptor
- */
-const fp = (descriptor: tf.Tensor, phi: number) => {
-
-    let s = 0;
-    for(let m = 1; m < getDescriptorHarmonics(descriptor) + 1; m++){
-        const phiM = m * phi;
-        const z1 = tf.mul(getElementFromComplexTensor(descriptor, descriptor.shape[0] - m),
-                    tf.complex(tf.cos(phiM), tf.sin(-phiM)));
-        const z2 = tf.mul(getElementFromComplexTensor(descriptor, m),
-                    tf.complex(tf.cos(phiM), tf.sin(phiM)));
-        s += tf.sub(
-                tf.mul(tf.real(z1), tf.imag(z2)),
-                tf.mul(tf.imag(z1), tf.real(z2))).arraySync() as number;
-    }
-    return s;
-};
-
-const getElementFromComplexTensor = (tensor: tf.Tensor, index: number): tf.Tensor =>
-    tf.complex((tf.real(tensor).arraySync() as number[])[index],
-                (tf.imag(tensor).arraySync() as number[])[index]);
-
-const getDescriptorHarmonics = (descriptor: tf.Tensor): number => (descriptor.shape[0] - 1) / 2;
